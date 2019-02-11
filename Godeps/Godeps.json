@@ -1,0 +1,23 @@
+{
+	"ImportPath": "github.com/idata-shopee/gopcp_service",
+	"GoVersion": "go1.11",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "github.com/idata-shopee/gopcp",
+			"Rev": "f237e5bdd552e5dbfb33b3854fc26d17cbbaebda"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context/ctxhttp",
+			"Rev": "915654e7eabcea33ae277abbecf52f0d8b7a9fdc"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2",
+			"Rev": "36a7019397c4c86cf59eeab3bc0d188bac444277"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2/internal",
+			"Rev": "36a7019397c4c86cf59eeab3bc0d188bac444277"
+		}
+	]
+}
