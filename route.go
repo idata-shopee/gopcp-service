@@ -50,7 +50,6 @@ func (r Route) Match(req *http.Request) bool {
 }
 
 func (r Route) Handle(w http.ResponseWriter, req *http.Request) {
-	log.Printf("access %s", req.URL)
 	if val, ok := r.MethodsSupported[req.Method]; ok && val == true {
 		r.Handler(w, req)
 	} else {
@@ -60,6 +59,8 @@ func (r Route) Handle(w http.ResponseWriter, req *http.Request) {
 }
 
 func (r Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+	log.Printf("access %s", req.URL)
+
 	defer func() {
 		if r := recover(); r != nil {
 			fmt.Println("Recovered in %s", r)
