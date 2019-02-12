@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"github.com/idata-shopee/gopcp"
 	"net/http"
+	"net/url"
 )
 
 type PcpHttpResponse struct {
@@ -42,8 +43,13 @@ func GetPcpMid(sandbox *gopcp.Sandbox) MidFunType {
 		var err error
 
 		if r.Method == "GET" {
-			// parse url query
-			err = json.Unmarshal([]byte(r.URL.RawQuery), &arr)
+			rawQuery, eerr := url.QueryUnescape(r.URL.RawQuery)
+			if eerr != nil {
+				err = eerr
+			} else {
+				// parse url query
+				err = json.Unmarshal([]byte(rawQuery), &arr)
+			}
 		} else {
 			// get post body
 			arr, err = GetJsonBody(r)
