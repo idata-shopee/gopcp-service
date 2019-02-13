@@ -21,7 +21,7 @@ func executeRequest(pcpServer *gopcp.PcpServer, arr interface{}, attachment inte
 	return PcpHttpResponse{ret, 0, ""}
 }
 
-func toBytes(pcpHttpRes PcpHttpResponse) []byte {
+func ResponseToBytes(pcpHttpRes PcpHttpResponse) []byte {
 	bytes, jerr := json.Marshal(pcpHttpRes)
 
 	if jerr != nil {
@@ -33,6 +33,10 @@ func toBytes(pcpHttpRes PcpHttpResponse) []byte {
 }
 
 type MidFunType = func(http.ResponseWriter, *http.Request, interface{})
+
+func ErrorToResponse(err error) PcpHttpResponse {
+	return PcpHttpResponse{nil, 530, err.Error()}
+}
 
 func GetPcpMid(sandbox *gopcp.Sandbox) MidFunType {
 	pcpServer := gopcp.NewPcpServer(sandbox)
@@ -61,6 +65,6 @@ func GetPcpMid(sandbox *gopcp.Sandbox) MidFunType {
 			pcpHttpRes = executeRequest(pcpServer, arr, attachment)
 		}
 
-		w.Write(toBytes(pcpHttpRes))
+		w.Write(ResponseToBytes(pcpHttpRes))
 	}
 }
