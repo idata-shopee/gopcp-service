@@ -12,3 +12,6 @@ test-only:
 
 save:
 	godep save
+
+update:
+	@godep update github.com/idata-shopee/gopcp

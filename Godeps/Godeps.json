@@ -5,7 +5,7 @@
 	"Deps": [
 		{
 			"ImportPath": "github.com/idata-shopee/gopcp",
-			"Rev": "f237e5bdd552e5dbfb33b3854fc26d17cbbaebda"
+			"Rev": "209e1981a994b02ea107551468906f5f62ba0d45"
 		},
 		{
 			"ImportPath": "golang.org/x/net/context/ctxhttp",
