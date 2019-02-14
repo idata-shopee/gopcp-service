@@ -14,4 +14,4 @@ save:
 	godep save
 
 update:
-	@godep update github.com/idata-shopee/gopcp
+	@godep update github.com/...
