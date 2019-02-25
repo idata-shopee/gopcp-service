@@ -63,7 +63,7 @@ func (r Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 
 	defer func() {
 		if r := recover(); r != nil {
-			fmt.Println("Recovered in %s", r)
+			fmt.Printf("Recovered in %s", r)
 		}
 	}()
 	for _, route := range r.Routes {

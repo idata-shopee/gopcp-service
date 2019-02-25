@@ -31,3 +31,7 @@ func (sessionMid *SessionMid) SetSessionUserInfo(w http.ResponseWriter, sessionU
 	}
 	return SetSession(w, sessionMid.SessionKey, sessionMid.SessionUserInfoKey, string(value), sessionMid.Path, sessionMid.Expire)
 }
+
+func (sessionMid *SessionMid) RemoveUserFromSession(w http.ResponseWriter) {
+	return RemoveSession(w, sessionMid.SessionKey, sessionMid.SessionUserInfoKey)
+}
