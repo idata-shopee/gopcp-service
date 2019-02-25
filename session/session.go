@@ -56,10 +56,11 @@ func GetSession(r *http.Request,
 }
 
 // remove session from cookie
-func RemoveSession(w http.ResponseWriter, key string) {
+func RemoveSession(w http.ResponseWriter, key string, path string) {
 	http.SetCookie(w, &http.Cookie{
 		Name:   key,
-		Value:  "",
+		Value:  "placed",
+		Path:   path,
 		MaxAge: -1,
 	})
 }
