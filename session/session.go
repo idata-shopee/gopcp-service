@@ -58,9 +58,8 @@ func GetSession(r *http.Request,
 // remove session from cookie
 func RemoveSession(w http.ResponseWriter, key string) {
 	http.SetCookie(w, &http.Cookie{
-		Name:    key,
-		Value:   "",
-		Expires: expiration,
-		MaxAge:  -1,
+		Name:   key,
+		Value:  "",
+		MaxAge: -1,
 	})
 }

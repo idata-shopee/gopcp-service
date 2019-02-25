@@ -33,5 +33,5 @@ func (sessionMid *SessionMid) SetSessionUserInfo(w http.ResponseWriter, sessionU
 }
 
 func (sessionMid *SessionMid) RemoveUserFromSession(w http.ResponseWriter) {
-	return RemoveSession(w, sessionMid.SessionKey, sessionMid.SessionUserInfoKey)
+	RemoveSession(w, sessionMid.SessionUserInfoKey)
 }
