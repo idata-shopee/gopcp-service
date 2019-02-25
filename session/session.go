@@ -39,8 +39,8 @@ func SetSession(w http.ResponseWriter,
 }
 
 // get session from cookie
-// @param sessionKey  []byte   	secrect key
-// @param key 			  string 		key of cookie field
+// @param sessionKey      []byte   	secrect key
+// @param key 			  string 	key of cookie field
 func GetSession(r *http.Request,
 	sessionKey []byte,
 	key string) (string, error) {
@@ -53,4 +53,14 @@ func GetSession(r *http.Request,
 		return "", err
 	}
 	return sourceText, nil
+}
+
+// remove session from cookie
+func RemoveSession(w http.ResponseWriter, key string) {
+	http.SetCookie(w, &http.Cookie{
+		Name:    key,
+		Value:   "",
+		Expires: expiration,
+		MaxAge:  -1,
+	})
 }
