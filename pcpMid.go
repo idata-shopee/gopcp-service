@@ -13,14 +13,6 @@ type PcpHttpResponse struct {
 	ErrMsg string      `json:"errMsg"`
 }
 
-func executeRequest(pcpServer *gopcp.PcpServer, arr interface{}, attachment interface{}) PcpHttpResponse {
-	ret, err := pcpServer.ExecuteJsonObj(arr, attachment)
-	if err != nil {
-		return ErrorToResponse(err, 530)
-	}
-	return PcpHttpResponse{ret, 0, ""}
-}
-
 func ResponseToBytes(pcpHttpRes PcpHttpResponse) []byte {
 	bytes, jerr := json.Marshal(pcpHttpRes)
 
@@ -32,7 +24,7 @@ func ResponseToBytes(pcpHttpRes PcpHttpResponse) []byte {
 	}
 }
 
-type MidFunType = func(http.ResponseWriter, *http.Request, interface{})
+type MidFunType = func(http.ResponseWriter, *http.Request, interface{}) (interface{}, error)
 
 func ErrorToResponse(err error, code int) PcpHttpResponse {
 	return PcpHttpResponse{nil, code, err.Error()}
@@ -41,16 +33,16 @@ func ErrorToResponse(err error, code int) PcpHttpResponse {
 func GetPcpMid(sandbox *gopcp.Sandbox) MidFunType {
 	pcpServer := gopcp.NewPcpServer(sandbox)
 
-	return func(w http.ResponseWriter, r *http.Request, attachment interface{}) {
+	return func(w http.ResponseWriter, r *http.Request, attachment interface{}) (interface{}, error) {
 		var pcpHttpRes PcpHttpResponse
 		var arr interface{}
-		var err error
+		var err error = nil
+		var rawQuery string
+		var ret interface{}
 
 		if r.Method == "GET" {
-			rawQuery, eerr := url.QueryUnescape(r.URL.RawQuery)
-			if eerr != nil {
-				err = eerr
-			} else {
+			rawQuery, err = url.QueryUnescape(r.URL.RawQuery)
+			if err == nil {
 				// parse url query
 				err = json.Unmarshal([]byte(rawQuery), &arr)
 			}
@@ -62,9 +54,16 @@ func GetPcpMid(sandbox *gopcp.Sandbox) MidFunType {
 		if err != nil {
 			pcpHttpRes = ErrorToResponse(err, 530)
 		} else {
-			pcpHttpRes = executeRequest(pcpServer, arr, attachment)
+			ret, err = pcpServer.ExecuteJsonObj(arr, attachment)
+
+			if err != nil {
+				pcpHttpRes = ErrorToResponse(err, 530)
+			} else {
+				pcpHttpRes = PcpHttpResponse{ret, 0, ""}
+			}
 		}
 
 		w.Write(ResponseToBytes(pcpHttpRes))
+		return arr, err
 	}
 }
