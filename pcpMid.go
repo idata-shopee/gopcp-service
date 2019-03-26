@@ -1,6 +1,7 @@
 package gopcp_service
 
 import (
+	"bytes"
 	"encoding/json"
 	"github.com/idata-shopee/gopcp"
 	"net/http"
@@ -13,8 +14,16 @@ type PcpHttpResponse struct {
 	ErrMsg string      `json:"errMsg"`
 }
 
+func JSONMarshal(t interface{}) ([]byte, error) {
+	buffer := &bytes.Buffer{}
+	encoder := json.NewEncoder(buffer)
+	encoder.SetEscapeHTML(false)
+	err := encoder.Encode(t)
+	return buffer.Bytes(), err
+}
+
 func ResponseToBytes(pcpHttpRes PcpHttpResponse) []byte {
-	bytes, jerr := json.Marshal(pcpHttpRes)
+	bytes, jerr := JSONMarshal(pcpHttpRes)
 
 	if jerr != nil {
 		ret, _ := json.Marshal(ErrorToResponse(jerr, 530))
