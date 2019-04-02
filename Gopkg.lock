@@ -27,11 +27,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:6b791a2763b64eeb395349ef372a37bb9af7e2b3de38b1beb69afe6c9b5c9ca9"
+  digest = "1:5bc9a95d7216ec73d8d5cab585ab0315c7b485a9900d4213992b540346e38bff"
   name = "github.com/idata-shopee/gopcp_rpc"
   packages = ["."]
   pruneopts = "UT"
-  revision = "142e4c7f12df889519a9e85e5b34039019aedd14"
+  revision = "ac67721ad0d383ce230822cee529bc9a1659f6c0"
 
 [[projects]]
   branch = "master"
@@ -39,7 +39,7 @@
   name = "github.com/idata-shopee/gopool"
   packages = ["."]
   pruneopts = "UT"
-  revision = "e16906167819826501f14fdb4e2971d28acdc79d"
+  revision = "e1576262f8643bd2a72e0a615ae31c1f103f6e86"
 
 [[projects]]
   digest = "1:274f67cb6fed9588ea2521ecdac05a6d62a8c51c074c1fccc6a49a40ba80e925"
@@ -58,7 +58,7 @@
     "context/ctxhttp",
   ]
   pruneopts = "UT"
-  revision = "74e053c68e2965fe54b49e4d18cb37db34288db2"
+  revision = "74de082e2cca95839e88aa0aeee5aadf6ce7710f"
 
 [[projects]]
   branch = "master"
