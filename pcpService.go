@@ -6,7 +6,6 @@ package gopcp_service
 //  (3) sandbox provided functions
 
 import (
-	"github.com/idata-shopee/gopcp"
 	rpc "github.com/idata-shopee/gopcp_rpc"
 	"log"
 	"net/http"
@@ -31,16 +30,19 @@ func StartHttpServer(port int, routes []Route) error {
 	return http.ListenAndServe(":"+strconv.Itoa(port), router)
 }
 
-func StartTcpServer(port int, sandbox *gopcp.Sandbox) error {
+// blocking service
+func StartTcpServer(port int, generateSandbox rpc.GenerateSandbox) error {
 	log.Println("try to start tcp server at " + strconv.Itoa(port))
-	if server, err := rpc.GetPCPRPCServer(port, sandbox); err != nil {
+	if server, err := rpc.GetPCPRPCServer(port, generateSandbox); err != nil {
 		return err
 	} else {
 		defer server.Close()
 
+		// blocking forever
 		var wg sync.WaitGroup
 		wg.Add(1)
 		wg.Wait()
+
 		return nil
 	}
 }

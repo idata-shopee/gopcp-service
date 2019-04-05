@@ -7,6 +7,9 @@ init-dep:
 status-dep:
 	@dep status
 
+dep:
+	@dep ensure
+
 update-dep:
 	@dep ensure -update
 
