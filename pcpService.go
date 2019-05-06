@@ -31,9 +31,9 @@ func StartHttpServer(port int, routes []Route) error {
 }
 
 // blocking service
-func StartTcpServer(port int, generateSandbox rpc.GenerateSandbox) error {
+func StartTcpServer(port int, generateSandbox rpc.GenerateSandbox, cer func() *rpc.ConnectionEvent) error {
 	log.Println("try to start tcp server at " + strconv.Itoa(port))
-	if server, err := rpc.GetPCPRPCServer(port, generateSandbox); err != nil {
+	if server, err := rpc.GetPCPRPCServer(port, generateSandbox, cer); err != nil {
 		return err
 	} else {
 		defer server.Close()
