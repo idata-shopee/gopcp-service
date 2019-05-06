@@ -27,11 +27,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:dc886a8cb69512d16ce86fb9261f74db56ef190e54a2e91d67d56cfcbaf38a7e"
+  digest = "1:b952965a6e84795138a0a011e10248282b0d195fa1afc322239d5ea8ea702580"
   name = "github.com/idata-shopee/gopcp_rpc"
   packages = ["."]
   pruneopts = "UT"
-  revision = "e1e65327c99fd3360f305c93e7a995223e45287b"
+  revision = "cd98c5934853f5cb993aead275de1d6df8202dcf"
 
 [[projects]]
   branch = "master"
