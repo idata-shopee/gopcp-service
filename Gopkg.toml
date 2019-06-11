@@ -27,7 +27,7 @@
 
 [[constraint]]
   branch = "master"
-  name = "github.com/idata-shopee/gopcp"
+  name = "github.com/lock-free/gopcp"
 
 [[constraint]]
   branch = "master"
