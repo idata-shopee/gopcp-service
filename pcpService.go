@@ -6,7 +6,7 @@ package gopcp_service
 //  (3) sandbox provided functions
 
 import (
-	rpc "github.com/idata-shopee/gopcp_rpc"
+	rpc "github.com/lock-free/gopcp_rpc"
 	"log"
 	"net/http"
 	"strconv"

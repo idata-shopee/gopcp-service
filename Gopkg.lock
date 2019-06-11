@@ -28,7 +28,7 @@
 [[projects]]
   branch = "master"
   digest = "1:b952965a6e84795138a0a011e10248282b0d195fa1afc322239d5ea8ea702580"
-  name = "github.com/idata-shopee/gopcp_rpc"
+  name = "github.com/lock-free/gopcp_rpc"
   packages = ["."]
   pruneopts = "UT"
   revision = "cd98c5934853f5cb993aead275de1d6df8202dcf"
@@ -100,7 +100,7 @@
   analyzer-version = 1
   input-imports = [
     "github.com/idata-shopee/gopcp",
-    "github.com/idata-shopee/gopcp_rpc",
+    "github.com/lock-free/gopcp_rpc",
     "golang.org/x/oauth2",
   ]
   solver-name = "gps-cdcl"
