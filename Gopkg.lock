@@ -27,19 +27,19 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:eb5b2d5bb9ad485e35deb033d4fbbd2c7135af2de15708de9d3d461c57ab0554"
+  digest = "1:f07b3dd8d28555e3d567d93f9de8622538b4df5da108df440d3405861766bd92"
   name = "github.com/lock-free/gopcp_rpc"
   packages = ["."]
   pruneopts = "UT"
-  revision = "6c983b73aa85a68eb2bc3a0016c98bf017ca6b05"
+  revision = "d2917967cf146efab15ec417ada2c891be27f493"
 
 [[projects]]
   branch = "master"
-  digest = "1:8de4af927c33fc7a525457c2d694490131d37b755d03d504ad838fd0e422d686"
+  digest = "1:588660db9817d9444e3aa73a7036b2637d971f602803db807ff3b3a61c401693"
   name = "github.com/lock-free/gopcp_stream"
   packages = ["."]
   pruneopts = "UT"
-  revision = "a77f7b6c17b34b658b81decc64688fb9a2da0db3"
+  revision = "b6cfcbffb8aed3af9521949da70ca89e4ab6526d"
 
 [[projects]]
   branch = "master"
@@ -66,7 +66,7 @@
     "context/ctxhttp",
   ]
   pruneopts = "UT"
-  revision = "461777fb6f67e8cb9d70cda16573678d085a74cf"
+  revision = "d28f0bde5980168871434b95cfc858db9f2a7a99"
 
 [[projects]]
   branch = "master"
