@@ -3,6 +3,7 @@ package gopcp_service
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	KLog "github.com/lock-free/goklog"
 	"github.com/lock-free/gopcp"
@@ -68,9 +69,11 @@ func GetPcpMid(sandbox *gopcp.Sandbox) MidFunType {
 				// parse url query
 				err = json.Unmarshal([]byte(rawQuery), &arr)
 			}
-		} else {
+		} else if r.Method == "POST" {
 			// get post body
 			arr, err = GetJsonBody(r)
+		} else {
+			err = errors.New("Unsupported method")
 		}
 
 		if err != nil {
