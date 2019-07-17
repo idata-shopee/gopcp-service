@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  digest = "1:aacef5f5e45685f2aeda5534d0a750dee6859de7e9088cdd06192787bb01ae6d"
+  name = "github.com/go-errors/errors"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "a6af135bd4e28680facf08a3d206b454abc877a4"
+  version = "v1.0.1"
+
+[[projects]]
   digest = "1:318f1c959a8a740366fce4b1e1eb2fd914036b4af58fbd0a003349b305f118ad"
   name = "github.com/golang/protobuf"
   packages = ["proto"]
@@ -16,6 +24,14 @@
   packages = ["."]
   pruneopts = "UT"
   revision = "9d53a70585c6663b54f9ce6dfbfce7259ad09e25"
+
+[[projects]]
+  branch = "master"
+  digest = "1:02400ac9c4e08b09421e7f14cfbcaf889d6995f3af56a5b4ebd071150b39a4f8"
+  name = "github.com/lock-free/goklog"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "8817b881611c67f52af5b90ed496adea4154f1ba"
 
 [[projects]]
   branch = "master"
@@ -99,6 +115,7 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/lock-free/goklog",
     "github.com/lock-free/gopcp",
     "github.com/lock-free/gopcp_rpc",
     "golang.org/x/oauth2",
