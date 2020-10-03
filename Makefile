@@ -1,20 +1,14 @@
-GOPATH := $(shell cd ../../../.. && pwd)
-export GOPATH
+clean:
+	@go mod tidy
 
-init-dep:
-	@dep init
-
-status-dep:
-	@dep status
-
-dep:
-	@dep ensure
-
-update-dep:
-	@dep ensure -update
+update:
+	@go get -u
 
 test:
-	go test -cover
+	@go test -v -race
 
-test-only:
-	go test -run $(CASE) -cover
+cover:
+	@go test -coverprofile=coverage.out
+	@go tool cover -html=coverage.out -o coverage.html
+
+.PHONY:	test
