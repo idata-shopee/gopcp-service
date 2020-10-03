@@ -115,9 +115,13 @@ github.com/lock-free/gopcp v0.0.0-20201003174023-e1bac94d9ff6 h1:jhTajGNmUWoz6cw
 github.com/lock-free/gopcp v0.0.0-20201003174023-e1bac94d9ff6/go.mod h1:oCDdmM8dVF6K1Tp/j1bsgg7/6BOx8kck0uWieRKgOTc=
 github.com/lock-free/gopcp_rpc v0.0.0-20200122095307-df151075d490 h1:xOYVnQCMkdZ7WsBqwbXV2Oqk3t1Dkmv1F/UJeOskyZY=
 github.com/lock-free/gopcp_rpc v0.0.0-20200122095307-df151075d490/go.mod h1:sJ32EiZx9zNPGtfOswp5qQ/oI9wEMz4yFMiQM8BRj7I=
+github.com/lock-free/gopcp_rpc v0.0.0-20201003175801-77c2a1124a26 h1:RM8/9qD3clW38GyRpy9iMiOOTNp+nOhsbJ4q2PJgZak=
+github.com/lock-free/gopcp_rpc v0.0.0-20201003175801-77c2a1124a26/go.mod h1:y4rN8Q3p91966xzVV7yXG+PVvVvhfWoYWo3jSvy8j94=
 github.com/lock-free/gopcp_stream v0.0.0-20190920142350-b2d7e1d0cac7/go.mod h1:ozFeZLAmPWsBa3dB4y6PMgg+bb9/wbYfFhri42ylj/0=
 github.com/lock-free/gopcp_stream v0.0.0-20190920150102-eae38c487ee2 h1:Xe/hNV3O70UoqfCo2M4KHuxT8IMRCaQyBzJWbnpMF6I=
 github.com/lock-free/gopcp_stream v0.0.0-20190920150102-eae38c487ee2/go.mod h1:ozFeZLAmPWsBa3dB4y6PMgg+bb9/wbYfFhri42ylj/0=
+github.com/lock-free/gopcp_stream v0.0.0-20201003175511-d557307e2681 h1:OoAEYu9Kg/Ji++tFEtSUL9YbA6FVBW7wW4/76cGRAqM=
+github.com/lock-free/gopcp_stream v0.0.0-20201003175511-d557307e2681/go.mod h1:YMd4Y/UkLpEWqngCdSQjmJ4HPFjpNwNEGtEDDzxGYMw=
 github.com/lock-free/gopool v0.0.0-20190611034900-329206275cf0 h1:uuCzjJn7tQjlJ1DznRIDePhrTS3QSHCNP7sULz9oESw=
 github.com/lock-free/gopool v0.0.0-20190611034900-329206275cf0/go.mod h1:t3gxgFxZ4ezO3eR8lbx431lMFBD98x6hB0hBeuAe0nY=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
